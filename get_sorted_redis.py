@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# encoding: utf-8
+# -*- coding: UTF-8 -*-
 # ENV: python 2.7, redis(pip install redis)
 import redis
 
