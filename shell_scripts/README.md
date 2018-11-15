@@ -1,1 +1,7 @@
 一些简单shell脚本存档
+
+log_rotate.sh：使用脚本对应用日志进行按天归档，并只保留三天的日志
+
+read_variable.sh：根据提示创建固定文件首部尾部中间为输入变量的文件
+
+ubuntu_config.sh：修复ubuntu 16.04的apt更新问题和配置ssh禁用密码登陆并输入公钥
