@@ -12,3 +12,4 @@ serverScan：连接postgresql数据库，取出目标服务器地址列表进行
 
 shell_scripts：一些简单shell脚本存档
 
+traffic_statistics.sh：计算每分钟流量和每日实时流量并存入redis，供运维监控平台实时采集流量数据，设为每分钟定时任务自动执行
