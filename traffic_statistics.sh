@@ -8,9 +8,9 @@ TX=$(cat /proc/net/dev | grep $ethn | sed 's/:/ /g' | awk '{print $10}')
 
 TOTAL=$((${RX}+${TX}))
 
-MIN=`date +"%Y%m%d%H%M"`
-Last_MIN=`date +"%Y%m%d%H%M" -d "1 minutes ago"`
-TODAY=`date +"%Y%m%d"`
+MIN=`TZ=UTC-8 date +"%Y%m%d%H%M"`
+Last_MIN=`TZ=UTC-8 date +"%Y%m%d%H%M" -d "1 minutes ago"`
+TODAY=`TZ=UTC-8 date +"%Y%m%d"`
 
 redis-cli SET total.${MIN} $TOTAL EX 172800
 # redis-cli expire total.${MIN} 172800
