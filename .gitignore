@@ -1,2 +1,7 @@
 .idea
 *.pyc
+.vscode
+keys.py
+__pycache__
+error.log
+
