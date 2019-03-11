@@ -25,7 +25,7 @@ def get_hot_info():
     except urllib.error.URLError as e:
         with open('error.log', 'a') as f:
             current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-            f.write(current_time + ": " + 'bad network, retry')
+            f.write(current_time + ": " + 'bad network, retry\n')
         time.sleep(5)    
         apiJson = urllib.request.urlopen(req).read()
     except Exception as e:

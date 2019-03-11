@@ -12,7 +12,7 @@ Base = declarative_base()
 # 定义User对象:
 class Kuaishou(Base):
     # 表的名字:
-    __tablename__ = 'kuaishou_spider'
+    __tablename__ = 'kuaishou_hot'
 
     # 表的结构:
     id = Column(Integer, primary_key=True)
