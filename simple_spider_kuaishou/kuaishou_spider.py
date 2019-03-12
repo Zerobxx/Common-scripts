@@ -31,10 +31,10 @@ def get_hot_info():
     except Exception as e:
         with open('error.log', 'a') as f:
             current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-            f.write(current_time + " Access API error: " + e)    
+            f.write(current_time + " Access API error: " + str(e))    
             return
 
-    jsonData = json.loads(apiJson)
+    jsonData = json.loads(apiJson.decode('utf-8'))
 
     
     for item in jsonData['feeds']:
@@ -60,7 +60,7 @@ def get_hot_info():
 
             new_item = Kuaishou(kuaishou_id = itemSave['kwaiId'],
                                 view = itemSave['view_count'],
-                                like = itemSave['like_count'],
+                                likes = itemSave['like_count'],
                                 comment = itemSave['comment_count'],
                                 user_id = itemSave['user_id'],
                                 # user_name = itemSave['user_name'],
@@ -71,7 +71,7 @@ def get_hot_info():
         except Exception as e:
             with open('error.log', 'a') as f:
                 current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-                f.write(current_time + " DB insert error: " + e) 
+                f.write(current_time + " DB insert error: " + str(e)) 
         finally:    
             session.commit()
             session.close()    
@@ -88,7 +88,7 @@ def run_spider():
         except Exception as e:
             with open('error.log', 'a') as f:
                 current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-                f.write(current_time + " Run error: " + e)
+                f.write(current_time + " Run error: " + str(e))
             pass     
 
 
